@@ -40,12 +40,12 @@ import net.divbyzero.gpx.Track;
 import net.divbyzero.gpx.TrackSegment;
 import net.divbyzero.gpx.Waypoint;
 
-import org.jdom.DataConversionException;
-import org.jdom.Document;
-import org.jdom.Element;
-import org.jdom.JDOMException;
-import org.jdom.Namespace;
-import org.jdom.input.SAXBuilder;
+import org.jdom2.DataConversionException;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.Namespace;
+import org.jdom2.input.SAXBuilder;
 
 /**
  * GPX parser based on the JDOM XML parsing toolkit
