@@ -36,17 +36,17 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import net.divbyzero.gpx.GPX;
-import net.divbyzero.gpx.parser.JDOM;
+import net.divbyzero.gpx.parser.GPXParser;
 import net.divbyzero.gpx.parser.Parser;
 import net.divbyzero.gpx.parser.ParsingException;
 
 import org.junit.Test;
 
-public class JDOMTest {
+public class GPXParserTest {
 
     @Test
     public void testTrackParsing() throws Exception {
-        Parser parser = new JDOM();
+        Parser parser = new GPXParser();
         GPX gpx = parser.parse(new File("data/track.gpx"));
 
         assertEquals(1, gpx.getTracks().size());
@@ -62,7 +62,7 @@ public class JDOMTest {
     @Test
     public void testTrackingParsingFromURL() throws ParsingException {
         URL url = null;
-        Parser parser = new JDOM();
+        Parser parser = new GPXParser();
         try {
             url = new File("data/track.gpx").toURI().toURL();
         } catch (MalformedURLException e) {
@@ -82,9 +82,8 @@ public class JDOMTest {
 
     @Test
     public void testTrackingParsingBigFile() throws ParsingException {
-        Parser parser = new JDOM();
-        GPX gpx = parser.parse(new File("data/az-bdr.gpx"));
-        System.out.println("tracks::" +gpx.getTracks().size());
 
+        GPX gpx = GPXParser.parseFile(new File("data/az-bdr.gpx"));
+        assertEquals(16, gpx.getTracks().size());
     }
 }

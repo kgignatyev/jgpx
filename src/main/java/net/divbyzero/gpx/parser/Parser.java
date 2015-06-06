@@ -46,7 +46,7 @@ public interface Parser {
 	 * @return the resulting track collection
 	 * @throws ParsingException
 	 */
-	public abstract GPX parse(File file) throws ParsingException;
+	 GPX parse(File file) throws ParsingException;
 
 	/**
 	 * Parses a GPX URL and returns the resulting GPX track collection
@@ -55,5 +55,5 @@ public interface Parser {
 	 * @return the resulting track collection
 	 * @throws ParsingException
 	 */
-	public abstract GPX parse(URL url) throws ParsingException;
+	 GPX parse(URL url) throws ParsingException;
 }
