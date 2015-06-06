@@ -110,7 +110,10 @@ public class GPXParser implements Parser {
     @SuppressWarnings("unchecked")
     private Track parseTrack(Element trackXML) {
         Track track = new Track();
-
+        Element nameEl= trackXML.getChild("name",ns);
+        if( nameEl != null){
+            track.name = nameEl.getValue();
+        }
         List<Element> segments = trackXML.getChildren("trkseg", ns);
         for (int i = 0; i < segments.size(); i++) {
             track.addSegment(parseTrackSegment(segments.get(i)));

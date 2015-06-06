@@ -41,6 +41,7 @@ import java.util.Date;
  */
 public class Track implements Measurable {
 
+	public String name = null;
 	private ArrayList<TrackSegment> segments = new ArrayList<TrackSegment>();
 	
 	/**

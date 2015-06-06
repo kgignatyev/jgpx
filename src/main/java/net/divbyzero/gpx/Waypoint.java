@@ -43,7 +43,17 @@ public class Waypoint {
 	private Coordinate coordinate;
 	private String name = "";
 	private double elevation = .0;
-	
+
+	public Waypoint() {
+	}
+
+	public Waypoint(Waypoint w) {
+		this.time = w.time;
+		this.coordinate = new Coordinate(w.coordinate);
+		this.name = w.name;
+		this.elevation = w.elevation;
+	}
+
 	/**
 	 * Sets the time stamp of the way point.
 	 * 

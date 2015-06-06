@@ -28,49 +28,58 @@ package net.divbyzero.gpx;
 
 /**
  * Coordinate for way points
- * 
+ * <p/>
  * <p>A coordinate consists of two fields for longitude and latitude.</p>
- * 
+ *
  * @author Martin Jansen <martin@divbyzero.net>
  * @since 0.1
  */
 public class Coordinate {
-	private double longitude = 0.0;
-	private double latitude = 0.0;
+    private double longitude = 0.0;
+    private double latitude = 0.0;
 
-	/**
-	 * Returns the value for the longitude of the coordinate
-	 * 
-	 * @return the longitude of the coordinate
-	 */
-	public double getLongitude() {
-		return longitude;
-	}
-	
-	/**
-	 * Sets the longitude of the coordinate
-	 * 
-	 * @param longitude the longitude of the coordinate
-	 */
-	public void setLongitude(double longitude) {
-		this.longitude = longitude;
-	}
-	
-	/**
-	 * Returns the value for the latitude of the coordinate
-	 * 
-	 * @return the latitude of the coordinate
-	 */
-	public double getLatitude() {
-		return latitude;
-	}
-	
-	/**
-	 * Sets the latitude of the coordinate
-	 * 
-	 * @param latitude the latitude of the coordinate
-	 */
-	public void setLatitude(double latitude) {
-		this.latitude = latitude;
-	}
+
+    public Coordinate() {
+    }
+
+    public Coordinate(Coordinate c) {
+        longitude = c.longitude;
+        latitude = c.latitude;
+    }
+
+    /**
+     * Returns the value for the longitude of the coordinate
+     *
+     * @return the longitude of the coordinate
+     */
+    public double getLongitude() {
+        return longitude;
+    }
+
+    /**
+     * Sets the longitude of the coordinate
+     *
+     * @param longitude the longitude of the coordinate
+     */
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    /**
+     * Returns the value for the latitude of the coordinate
+     *
+     * @return the latitude of the coordinate
+     */
+    public double getLatitude() {
+        return latitude;
+    }
+
+    /**
+     * Sets the latitude of the coordinate
+     *
+     * @param latitude the latitude of the coordinate
+     */
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
 }

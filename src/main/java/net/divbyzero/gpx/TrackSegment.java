@@ -40,7 +40,7 @@ import java.util.Date;
  * @since 0.1
  */
 public class TrackSegment implements Measurable {
-	private ArrayList<Waypoint> waypoints = new ArrayList<Waypoint>();
+	 ArrayList<Waypoint> waypoints = new ArrayList<Waypoint>();
 	
 	/**
 	 * Adds a new way point to the segment.
