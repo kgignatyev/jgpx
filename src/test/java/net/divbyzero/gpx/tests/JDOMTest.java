@@ -44,39 +44,47 @@ import org.junit.Test;
 
 public class JDOMTest {
 
-	@Test
-	public void testTrackParsing() throws Exception {
-		Parser parser = new JDOM();
-		GPX gpx = parser.parse(new File("data/track.gpx"));
-		
-		assertEquals(1, gpx.getTracks().size());
-		
-		assertTrue(gpx.getTracks().get(0).cumulativeAscent() > 0);
-		assertTrue(gpx.getTracks().get(0).cumulativeDescent() > 0);
-		assertTrue(gpx.getTracks().get(0).length() > 0);
-		
-		assertNotNull(gpx.getTracks().get(0).startingTime());
-		assertNotNull(gpx.getTracks().get(0).endTime());
-	}
-	
-	@Test
-	public void testTrackingParsingFromURL() throws ParsingException {
-		URL url = null;
-		Parser parser = new JDOM();
-		try {
-			url = new File("data/track.gpx").toURI().toURL();
-		} catch (MalformedURLException e) {
-			fail();
-		}
-		
-		GPX gpx = parser.parse(url);
-		assertEquals(1, gpx.getTracks().size());
-		
-		assertTrue(gpx.getTracks().get(0).cumulativeAscent() > 0);
-		assertTrue(gpx.getTracks().get(0).cumulativeDescent() > 0);
-		assertTrue(gpx.getTracks().get(0).length() > 0);
-		
-		assertNotNull(gpx.getTracks().get(0).startingTime());
-		assertNotNull(gpx.getTracks().get(0).endTime());
-	}
+    @Test
+    public void testTrackParsing() throws Exception {
+        Parser parser = new JDOM();
+        GPX gpx = parser.parse(new File("data/track.gpx"));
+
+        assertEquals(1, gpx.getTracks().size());
+
+        assertTrue(gpx.getTracks().get(0).cumulativeAscent() > 0);
+        assertTrue(gpx.getTracks().get(0).cumulativeDescent() > 0);
+        assertTrue(gpx.getTracks().get(0).length() > 0);
+
+        assertNotNull(gpx.getTracks().get(0).startingTime());
+        assertNotNull(gpx.getTracks().get(0).endTime());
+    }
+
+    @Test
+    public void testTrackingParsingFromURL() throws ParsingException {
+        URL url = null;
+        Parser parser = new JDOM();
+        try {
+            url = new File("data/track.gpx").toURI().toURL();
+        } catch (MalformedURLException e) {
+            fail();
+        }
+
+        GPX gpx = parser.parse(url);
+        assertEquals(1, gpx.getTracks().size());
+
+        assertTrue(gpx.getTracks().get(0).cumulativeAscent() > 0);
+        assertTrue(gpx.getTracks().get(0).cumulativeDescent() > 0);
+        assertTrue(gpx.getTracks().get(0).length() > 0);
+
+        assertNotNull(gpx.getTracks().get(0).startingTime());
+        assertNotNull(gpx.getTracks().get(0).endTime());
+    }
+
+    @Test
+    public void testTrackingParsingBigFile() throws ParsingException {
+        Parser parser = new JDOM();
+        GPX gpx = parser.parse(new File("data/az-bdr.gpx"));
+        System.out.println("tracks::" +gpx.getTracks().size());
+
+    }
 }

@@ -7,15 +7,11 @@
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 
-    <properties>
-        <jaxen.version>1.1.6</jaxen.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>jaxen</groupId>
             <artifactId>jaxen</artifactId>
-            <version>${jaxen.version}</version>
+            <version>1.1.6</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.ibm.icu</groupId>
