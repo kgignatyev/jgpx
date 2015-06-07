@@ -34,6 +34,6 @@ public class SegmentSimplifierTest {
             trackNum++;
         }
 
-        FileUtils.write(new File("data/simplified.gpx"), GPXWriter.toGpxString(simplifiedGPX));
+        FileUtils.write(new File("data/simplified.gpx"), GPXBuilder.toGpxString(simplifiedGPX));
     }
 }
